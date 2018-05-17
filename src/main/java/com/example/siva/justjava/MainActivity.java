@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
         String msg = "Name: "+nameText+"\nQuantity :"+quantity+"\nHas Whipped Cream :"+haswhipped+"\nHas Chocolate :"+hasChocolate+"\nTotal cost :"+calculatePrice(haswhipped, hasChocolate)+"\nThank you";
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:")); // only email apps should handle this
-        intent.putExtra(Intent.EXTRA_EMAIL, "sivaperumal644@gmail.com");
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[] { "sivaperumal644@gmail.com" });
         intent.putExtra(Intent.EXTRA_SUBJECT, "Coffee order for "+nameText);
         intent.putExtra(Intent.EXTRA_TEXT, msg);
         if (intent.resolveActivity(getPackageManager()) != null) {
